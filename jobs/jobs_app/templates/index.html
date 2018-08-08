@@ -1,9 +1,22 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% load bootstrap4 %}
-<link rel="stylesheet" href="{% static 'css/jobs.css' %}"> {% block content %}
+{% extends 'base.html' %} {% load static %} {% load bootstrap4 %}
+<link rel="stylesheet" href="{% static 'css/jobs.css' %}"> {% block content %} {% include 'navbar.html' %}
 <div class="container-fluid">
-    {% include 'navbar.html' %}
+    <div class="row">
+        <H1>Job search</H1>
+    </div>
+    <div class="row">
+        <p>At employee search, we help users connect with employers and for employers to find employees. We are dedicated to
+            making the job search simple and affordable. Our powerful search engine aims at matching the right job oppotunities
+            with the right people. We have no ads, and that's the reason why we are unique. Please update your profile so
+            that we can if you are an employer or job seeker.
+        </p>
+    </div>
+
+
+    <div class="row">
+        <h6>To continue</h6>
+        <button>Update Profile</button>
+    </div>
+
+    {% endblock %}
 </div>
-    
-{% endblock %}
