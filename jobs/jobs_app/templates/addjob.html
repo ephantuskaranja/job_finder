@@ -5,8 +5,11 @@
 
 <div class="container-fluid">
 
-
-  fghjk
+<form  action="{% url 'addjob' %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" value="submit">
+  </form>
 
 </div>
 

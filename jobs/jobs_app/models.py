@@ -55,6 +55,10 @@ class Jobs(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
+    def save_job(self):
+        return self.save()
+
+
 class Profile(models.Model):
     EMPLOYER = 'EMPLOYER'
     JOB_FINDER = 'JOB_FINDER'
