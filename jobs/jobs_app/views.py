@@ -16,3 +16,12 @@ def alljobs(request):
 
     
     return render(request, 'alljobs.html')
+
+
+def addjob(request):
+    
+
+    
+    return render(request, 'addjob.html')
+
+
