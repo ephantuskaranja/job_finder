@@ -1,16 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import User
+from datetime import datetime
 
 # Create your models here.
 class Jobs(models.Model):
     PYTHON = 'PYTHON'
-    C-SHARP = 'C#'
+    CSHARP = 'C#'
     JAVA = 'JAVA'
     C = 'C'
     RUBY = 'RUBY'
 
     SKILL_CHOICES = (
         ('PYTHON', 'python'),
-        ('C-SHARP', 'c#'),
+        ('CSHARP', 'c#'),
         ('JAVA', 'java'),
         ('C', 'c'),
         ('RUBY', 'ruby')
@@ -27,12 +29,12 @@ class Jobs(models.Model):
         ('RONGAI', 'rongai'),
         ('GATAKA', 'gataka'),
         ('OLOLUA', 'ololua')
+    )
 
-
-    
+    PERMANENT = 'PERMANENT'
     CONTRACT = 'CONTRACT'
     PART_TIME = 'PART_TIME'
-    PERMANENT = 'PERMANENT'
+    
 
     JOB_TYPE_CHOICES =(
         ('PERMANENT', 'permanent'),
@@ -49,3 +51,4 @@ class Jobs(models.Model):
     job_type = models.CharField(max_length=60,choices=JOB_TYPE_CHOICES)
     contact = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(max_length=250, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
