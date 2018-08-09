@@ -4,6 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 class Jobs(models.Model):
+    
     PYTHON = 'PYTHON'
     CSHARP = 'C#'
     JAVA = 'JAVA'
@@ -52,3 +53,15 @@ class Jobs(models.Model):
     contact = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(max_length=250, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class Profile(models.Model):
+    EMPLOYER = 'EMPLOYER'
+    JOB_FINDER = 'JOB_FINDER'
+
+    PROFILE_CHOICES = (
+        ('EMPLOYER', 'employer'),
+        ('JOB_FINDER', 'job_finder')
+    )
+    skill = models.CharField(max_length=60,choices=PROFILE_CHOICES)
+    
